@@ -7,7 +7,7 @@ import { ArrowRight, Bot, Linkedin, Search } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function HeroSection() {
-    const jellyfishImage = PlaceHolderImages.find((p) => p.id === 'jellyfish');
+    const heroImage = PlaceHolderImages.find((p) => p.id === 'hero-3d');
 
   return (
     <section className="relative w-full overflow-hidden bg-background text-foreground">
@@ -20,7 +20,7 @@ export function HeroSection() {
             Marketing Digital que va más a fondo.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">
-            Dejá de tercerizar. Te damos la estrategia, la estética y la precisión de un equipo que cumple.
+            Dejá de tercerizar. Te damos la estrategia, la estética y la precisión de un equipo que cumple con SEO, IA y Automatizaciones.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg hover:shadow-primary/40 rounded-full px-8 py-6 text-lg">
@@ -47,14 +47,14 @@ export function HeroSection() {
 
         {/* Columna Derecha: Imagen y Stats */}
         <div className="relative h-full w-full hidden lg:flex items-center justify-center">
-           {jellyfishImage && (
+           {heroImage && (
              <Image
-                src={jellyfishImage.imageUrl}
+                src={heroImage.imageUrl}
                 alt="Marketing digital con inteligencia artificial"
-                width={500}
-                height={500}
+                width={600}
+                height={600}
                 className="object-contain object-center"
-                data-ai-hint={jellyfishImage.imageHint}
+                data-ai-hint={heroImage.imageHint}
                 priority
              />
            )}

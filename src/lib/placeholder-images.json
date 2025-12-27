@@ -1,10 +1,10 @@
 {
   "placeholderImages": [
     {
-      "id": "jellyfish",
-      "description": "Imagen de una medusa violeta brillante sobre fondo oscuro para la sección de héroe.",
-      "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/028/628/685/small/artificial-intelligence-illustration-png.png",
-      "imageHint": "artificial intelligence"
+      "id": "hero-3d",
+      "description": "Imagen abstracta 3D para la sección de héroe.",
+      "imageUrl": "https://images.unsplash.com/photo-1635863138233-25a711463102?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMDNkYmFja2dyb3VuZCUyMG1pbmltYWx8ZW58MHx8fHwxNzY2ODYwNDc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract 3d"
     },
     {
       "id": "success-1",
