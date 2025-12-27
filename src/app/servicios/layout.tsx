@@ -52,11 +52,10 @@ export default function ServiciosLayout({
                   return (
                     <Link
                       key={service.slug}
-                      href={`/servicios#${service.slug}`}
+                      href={`/servicios/${service.slug}`}
                       className={cn(
                         'flex items-center gap-3 rounded-md p-3 text-sm font-medium transition-colors',
-                        // A simplified check for active link, can be improved with scroll spying
-                        pathname === `/servicios#${service.slug}`
+                        pathname === `/servicios/${service.slug}`
                         ? 'bg-primary/10 text-primary'
                         : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
                       )}

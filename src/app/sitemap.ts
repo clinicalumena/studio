@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 import { blogPosts, services } from '@/lib/data';
 
@@ -38,9 +39,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
   
-  // Asumiendo que hay páginas para cada servicio, aunque no existan aún.
   const servicePages = services.map(service => ({
-      url: `${BASE_URL}/servicios#${service.slug}`,
+      url: `${BASE_URL}/servicios/${service.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as 'monthly',
       priority: 0.8

@@ -1,3 +1,4 @@
+
 'use client';
 import {
   TrendingUp,
@@ -82,7 +83,7 @@ export function ServicesSection() {
                 return (
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                     <div className="h-full p-1">
-                      <Link href={`/servicios#${service.slug}`} className="block h-full group">
+                      <Link href={`/servicios/${service.slug}`} className="block h-full group">
                         <Card className="h-full transform transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-primary/20 bg-card border flex flex-col justify-between group-hover:border-primary">
                           <CardHeader className='p-8'>
                             {Icon && (
