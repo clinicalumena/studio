@@ -40,10 +40,10 @@ export function WhyUsSection() {
           >
             <div>
                 <h2 className="font-headline font-bold text-4xl md:text-5xl">
-                    ¿Por qué Manya Digital?
+                    ¿Por qué elegir nuestra Agencia de Marketing?
                 </h2>
                 <p className="mt-6 max-w-3xl text-muted-foreground md:text-lg">
-                    Porque no somos una agencia más. Somos tu socio estratégico, combinando tecnología de punta, conocimiento local y un enfoque obsesivo en resultados tangibles.
+                    Porque no somos una agencia de marketing digital más. Somos tu socio estratégico en Argentina, combinando tecnología de punta, conocimiento local y un enfoque obsesivo en resultados tangibles para tu negocio.
                 </p>
             </div>
             <ul className="space-y-8">

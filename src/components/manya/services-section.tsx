@@ -54,11 +54,11 @@ export function ServicesSection() {
           className="mb-16 text-center"
         >
           <h2 className="font-headline text-4xl font-bold md:text-5xl">
-            Soluciones a tu medida.
+            Soluciones de nuestra Agencia de Marketing
           </h2>
           <p className="mt-4 mx-auto max-w-2xl text-muted-foreground md:text-lg">
-            No creemos en soluciones universales. Vos traés el desafío,
-            nosotros armamos el mix de herramientas que realmente funciona.
+            Nuestra agencia de marketing digital no cree en soluciones universales. Vos traés el desafío,
+            nosotros armamos el mix de herramientas que realmente funciona para tu negocio en Argentina.
           </p>
         </motion.div>
 

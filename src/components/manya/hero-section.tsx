@@ -32,12 +32,12 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="mb-4 text-sm font-medium uppercase tracking-wider text-primary">De la idea al resultado</div>
+            <div className="mb-4 text-sm font-medium uppercase tracking-wider text-primary">Agencia de Marketing Digital en Argentina</div>
             <h1 className="font-headline text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
-              Marketing Digital que va más a fondo.
+              Tu Agencia de Marketing que va más a fondo.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">
-              Dejá de tercerizar. Te damos la estrategia, la estética y la precisión de un equipo que cumple con SEO, IA y Automatizaciones.
+              Somos la agencia de marketing online que tu negocio necesita. Te damos la estrategia, la estética y la precisión de un equipo que cumple con SEO, IA y Automatizaciones.
             </p>
           </motion.div>
           
