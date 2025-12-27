@@ -7,8 +7,18 @@ import { services } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { MoveRight } from 'lucide-react';
+import { Component, DraftingCompass, Goal, MessageCircle, MoveRight, TrendingUp, Users, Zap } from 'lucide-react';
 import { FinalCtaSection } from '@/components/manya/final-cta-section';
+
+const iconMap: { [key: string]: React.ComponentType<any> } = {
+  seo: TrendingUp,
+  'diseno-web': DraftingCompass,
+  'gestion-rrss': MessageCircle,
+  'performance-marketing': Goal,
+  crm: Users,
+  automatizaciones: Zap,
+};
+
 
 export default function ServiciosLayout({
   children,
@@ -36,22 +46,26 @@ export default function ServiciosLayout({
                 <h2 className="mb-4 text-lg font-semibold text-foreground font-headline">
                 Navegá los Servicios
                 </h2>
-                <nav className="flex flex-col gap-2">
-                {services.map((service) => (
+                <nav className="flex flex-col gap-1">
+                {services.map((service) => {
+                  const Icon = iconMap[service.slug];
+                  return (
                     <Link
-                    key={service.slug}
-                    href={`/servicios#${service.slug}`}
-                    className={cn(
-                        'rounded-md p-3 text-sm font-medium transition-colors',
+                      key={service.slug}
+                      href={`/servicios#${service.slug}`}
+                      className={cn(
+                        'flex items-center gap-3 rounded-md p-3 text-sm font-medium transition-colors',
                         // A simplified check for active link, can be improved with scroll spying
                         pathname === `/servicios#${service.slug}`
                         ? 'bg-primary/10 text-primary'
                         : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
-                    )}
+                      )}
                     >
-                    {service.title}
+                      {Icon && <Icon className="h-5 w-5 flex-shrink-0" />}
+                      <span>{service.title}</span>
                     </Link>
-                ))}
+                  )
+                })}
                 </nav>
 
                 <Card className="mt-8 bg-muted/40 border">
