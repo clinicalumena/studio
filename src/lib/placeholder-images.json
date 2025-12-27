@@ -71,6 +71,42 @@
       "description": "Imagen para la sección de Por qué elegirnos",
       "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGRhc2hib2FyZHxlbnwwfHx8fDE3NjY5MjI1MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business dashboard"
+    },
+    {
+      "id": "service-seo",
+      "description": "Imagen para servicio de SEO",
+      "imageUrl": "https://images.unsplash.com/photo-1599658880299-bcbf4e4a3c13?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "data analysis"
+    },
+    {
+      "id": "service-web",
+      "description": "Imagen para servicio de Diseño Web",
+      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "web design"
+    },
+    {
+      "id": "service-rrss",
+      "description": "Imagen para servicio de Redes Sociales",
+      "imageUrl": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "social media"
+    },
+    {
+      "id": "service-performance",
+      "description": "Imagen para servicio de Performance Marketing",
+      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "marketing campaign"
+    },
+    {
+      "id": "service-crm",
+      "description": "Imagen para servicio de CRM",
+      "imageUrl": "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "customer relationship"
+    },
+    {
+      "id": "service-automation",
+      "description": "Imagen para servicio de Automatizaciones",
+      "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "automation workflow"
     }
   ]
 }
