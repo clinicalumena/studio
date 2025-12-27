@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Code } from 'lucide-react';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://manyadigital.com'), // Reemplazar con el dominio real
+  metadataBase: new URL('https://manyadigital.ar'),
   title: {
     default: 'Agencia de Marketing Digital en Argentina | Manya Digital',
     template: '%s | Manya Digital',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Agencia de Marketing Digital en Argentina | Manya Digital',
     description: 'Potenciamos tu marca con estrategias de SEO, IA y marketing online a medida.',
-    url: 'https://manyadigital.com', // Reemplazar con el dominio real
+    url: 'https://manyadigital.ar',
     siteName: 'Manya Digital',
     locale: 'es_AR',
     type: 'website',
@@ -36,8 +36,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Manya Digital',
-    url: 'https://manyadigital.com', // Reemplazar con el dominio real
-    logo: 'https://manyadigital.com/logo.png', // Reemplazar con la URL del logo
+    url: 'https://manyadigital.ar',
+    logo: 'https://manyadigital.ar/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+54-9-11-1234-5678',

@@ -35,14 +35,14 @@ export default function BlogPage() {
       name: 'Manya Digital',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://manyadigital.com/logo.png', // Reemplazar
+        url: 'https://manyadigital.ar/logo.png',
       },
     },
     blogPost: blogPosts.map((post) => ({
       '@type': 'BlogPosting',
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `https://manyadigital.com/blog/${post.slug}`, // Reemplazar
+        '@id': `https://manyadigital.ar/blog/${post.slug}`,
       },
       headline: post.title,
       image: post.image.src,
@@ -60,7 +60,7 @@ export default function BlogPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
-      <div className="container mx-auto px-4 py-16 md:px-6 md:py-24">
+      <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="mb-12 text-center">
           <h1 className="font-headline text-4xl font-bold md:text-5xl">
             Nuestro Rincón Digital

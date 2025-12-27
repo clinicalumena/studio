@@ -133,7 +133,7 @@ export default function ServiciosPage() {
           '@type': 'Service',
           name: service.title,
           description: service.benefit,
-          url: `https://manyadigital.com/servicios#${service.id}`, // Reemplazar
+          url: `https://manyadigital.ar/servicios#${service.id}`,
           provider: {
             '@type': 'Organization',
             name: 'Manya Digital',

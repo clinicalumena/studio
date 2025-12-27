@@ -20,7 +20,7 @@ export default function ContactoPage() {
       mainEntity: {
         '@type': 'Organization',
         name: 'Manya Digital',
-        url: 'https://manyadigital.com', // Reemplazar
+        url: 'https://manyadigital.ar',
         telephone: '+54-9-11-1234-5678',
         address: {
           '@type': 'PostalAddress',

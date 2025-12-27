@@ -65,7 +65,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     '@type': 'BlogPosting',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://manyadigital.com/blog/${post.slug}`, // Reemplazar
+      '@id': `https://manyadigital.ar/blog/${post.slug}`,
     },
     headline: post.title,
     description: post.excerpt,
@@ -73,14 +73,14 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     author: {
       '@type': 'Person',
       name: post.author.name,
-      url: 'https://manyadigital.com', // Opcional: URL del perfil del autor
+      url: 'https://manyadigital.ar', 
     },
     publisher: {
       '@type': 'Organization',
       name: 'Manya Digital',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://manyadigital.com/logo.png', // Reemplazar
+        url: 'https://manyadigital.ar/logo.png',
       },
     },
     datePublished: new Date(post.date).toISOString(),
