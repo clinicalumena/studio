@@ -1,4 +1,6 @@
 
+'use client';
+
 import { services, serviceDetails } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
@@ -9,6 +11,7 @@ import { CheckCircle, MoveRight } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export async function generateStaticParams() {
   return services.map((service) => ({
@@ -39,14 +42,39 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
   return (
     <div className="bg-background">
       {/* Hero */}
-      <section className="py-20 md:py-32 text-center bg-muted/20">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.hero.h1}</h1>
-          <div className="mt-8 flex justify-center flex-wrap gap-4">
-            {service.hero.subservices.map(sub => <Badge key={sub} variant="secondary" className="text-base px-4 py-1">{sub}</Badge>)}
-          </div>
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-24 text-center md:py-32"
+      >
+        <div className="container relative z-10">
+          <motion.h1
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="font-headline bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-4xl font-bold text-transparent md:text-6xl"
+          >
+            {service.hero.h1}
+          </motion.h1>
+          <motion.p 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground"
+          >
+            {service.meta.description}
+          </motion.p>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }} 
+            className="mt-8 flex flex-wrap justify-center gap-3"
+          >
+            {service.hero.subservices.map(sub => <Badge key={sub} variant="secondary" className="px-4 py-2 text-sm">{sub}</Badge>)}
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA 1 */}
       <section className="py-20 md:py-24">
