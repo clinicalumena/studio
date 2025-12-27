@@ -20,34 +20,40 @@ export const services = [
   {
     icon: 'TrendingUp',
     title: 'SEO',
+    slug: 'seo',
     description:
       'Posicionamiento orgánico con estrategias basadas en datos e IA.',
   },
   {
     icon: 'PencilRuler',
     title: 'Diseño Web',
+    slug: 'diseno-web',
     description:
       'Sitios web que convierten, diseñados para la experiencia del usuario.',
   },
   {
     icon: 'Share2',
     title: 'Gestión de RRSS',
+    slug: 'gestion-rrss',
     description:
       'Community management estratégico que genera engagement real.',
   },
   {
     icon: 'MousePointerClick',
     title: 'Performance Marketing',
+    slug: 'performance-marketing',
     description: 'Meta Ads y Google Ads optimizados con machine learning.',
   },
   {
     icon: 'Users',
     title: 'CRM',
+    slug: 'crm',
     description: 'Gestión inteligente de clientes que maximiza el lifetime value.',
   },
   {
     icon: 'Component',
     title: 'Automatizaciones',
+    slug: 'automatizaciones',
     description: 'Workflows inteligentes con IA que escalan tu operación.',
   },
 ];
