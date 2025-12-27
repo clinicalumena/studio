@@ -20,10 +20,10 @@ export function Footer() {
           <div>
             <h3 className="mb-4 font-semibold text-lg font-headline">Navegación</h3>
             <ul className="space-y-3">
-              <li><Link href="#servicios" className="text-sm text-muted-foreground transition-colors duration-300 ease-in-out hover:text-primary">Servicios</Link></li>
+              <li><Link href="/servicios" className="text-sm text-muted-foreground transition-colors duration-300 ease-in-out hover:text-primary">Servicios</Link></li>
               <li><Link href="#por-que-elegirnos" className="text-sm text-muted-foreground transition-colors duration-300 ease-in-out hover:text-primary">Por qué elegirnos</Link></li>
               <li><Link href="/blog" className="text-sm text-muted-foreground transition-colors duration-300 ease-in-out hover:text-primary">Blog</Link></li>
-              <li><Link href="#contacto" className="text-sm text-muted-foreground transition-colors duration-300 ease-in-out hover:text-primary">Contacto</Link></li>
+              <li><Link href="/contacto" className="text-sm text-muted-foreground transition-colors duration-300 ease-in-out hover:text-primary">Contacto</Link></li>
             </ul>
           </div>
           <div>

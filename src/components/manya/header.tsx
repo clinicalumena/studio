@@ -6,14 +6,8 @@ import { Menu, X, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { navLinks } from '@/lib/data';
 
-
-const navLinks = [
-  { name: 'Servicios', href: '#servicios' },
-  { name: 'Por qué elegirnos', href: '#por-que-elegirnos' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contacto', href: '#contacto' },
-];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,7 +55,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
             <Button asChild className='hidden md:flex bg-gradient-to-r from-primary to-accent text-primary-foreground transition-transform duration-300 ease-in-out hover:scale-105'>
-                <Link href="#contacto">Hablemos</Link>
+                <Link href="/contacto">Hablemos</Link>
             </Button>
             <div className="md:hidden">
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -99,7 +93,7 @@ export function Header() {
                     </nav>
                     <div className='mt-auto'>
                         <Button asChild className='w-full' size="lg">
-                            <Link href="#contacto" onClick={closeMobileMenu}>Hablemos de tu proyecto</Link>
+                            <Link href="/contacto" onClick={closeMobileMenu}>Hablemos de tu proyecto</Link>
                         </Button>
                     </div>
                   </div>

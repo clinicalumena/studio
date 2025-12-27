@@ -30,7 +30,7 @@ export function FinalCtaSection() {
               variant="outline"
               className="bg-primary-foreground text-primary font-bold text-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-white/90 shadow-2xl rounded-full px-8 py-6"
             >
-              <Link href="#contacto">Hablemos de tu proyecto</Link>
+              <Link href="/contacto">Hablemos de tu proyecto</Link>
             </Button>
           </div>
         </motion.div>

@@ -10,10 +10,10 @@ const getImage = (id: string): { src: string; hint: string } => {
 };
 
 export const navLinks = [
-  { name: 'Servicios', href: '#servicios' },
+  { name: 'Servicios', href: '/servicios' },
   { name: 'Por qué elegirnos', href: '#por-que-elegirnos' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contacto', href: '#contacto' },
+  { name: 'Contacto', href: '/contacto' },
 ];
 
 export const services = [
@@ -24,7 +24,7 @@ export const services = [
       'Posicionamiento orgánico con estrategias basadas en datos e IA.',
   },
   {
-    icon: 'Globe',
+    icon: 'PencilRuler',
     title: 'Diseño Web',
     description:
       'Sitios web que convierten, diseñados para la experiencia del usuario.',
@@ -36,7 +36,7 @@ export const services = [
       'Community management estratégico que genera engagement real.',
   },
   {
-    icon: 'Bot',
+    icon: 'MousePointerClick',
     title: 'Performance Marketing',
     description: 'Meta Ads y Google Ads optimizados con machine learning.',
   },
@@ -46,7 +46,7 @@ export const services = [
     description: 'Gestión inteligente de clientes que maximiza el lifetime value.',
   },
   {
-    icon: 'Layers',
+    icon: 'Component',
     title: 'Automatizaciones',
     description: 'Workflows inteligentes con IA que escalan tu operación.',
   },
