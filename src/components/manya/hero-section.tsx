@@ -7,7 +7,7 @@ import { ArrowRight, Bot, Linkedin, Search } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function HeroSection() {
-    const jellyfishImage = PlaceHolderImages.find((p) => p.id === 'jellyfish');
+    const aiImage = PlaceHolderImages.find((p) => p.id === 'jellyfish');
 
   return (
     <section className="relative w-full overflow-hidden bg-background text-foreground">
@@ -47,35 +47,17 @@ export function HeroSection() {
 
         {/* Columna Derecha: Imagen y Stats */}
         <div className="relative h-full w-full hidden lg:flex items-center justify-center">
-           {jellyfishImage && (
+           {aiImage && (
              <Image
-                src={jellyfishImage.imageUrl}
-                alt="Marketing digital profundo"
-                fill
-                className="object-contain object-center scale-125"
-                data-ai-hint={jellyfishImage.imageHint}
+                src={aiImage.imageUrl}
+                alt="Marketing digital con inteligencia artificial"
+                width={500}
+                height={500}
+                className="object-contain object-center"
+                data-ai-hint={aiImage.imageHint}
                 priority
              />
            )}
-           <div className="absolute top-[20%] right-0 flex flex-col gap-4">
-            <Button variant="outline" size="icon" className="bg-card/10 border-border/20 backdrop-blur-sm hover:bg-card/30">
-                <Linkedin className="h-5 w-5"/>
-            </Button>
-             <Button variant="outline" size="icon" className="bg-card/10 border-border/20 backdrop-blur-sm hover:bg-card/30">
-                <Bot className="h-5 w-5"/>
-            </Button>
-           </div>
-
-           <Card className="absolute bottom-[20%] right-0 w-64 bg-card/10 border-border/20 backdrop-blur-md rounded-2xl shadow-2xl">
-                <CardContent className="p-6 text-center">
-                    <div className="mx-auto mb-4 h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-accent/20 text-primary">
-                        <Search className="h-8 w-8" />
-                    </div>
-                    <p className="font-bold text-lg text-foreground">SEO que factura</p>
-                    <p className="text-sm text-muted-foreground mt-2">Sabemos cómo conseguir clientes sin que quemes tu presupuesto.</p>
-                </CardContent>
-           </Card>
-
         </div>
       </div>
     </section>
