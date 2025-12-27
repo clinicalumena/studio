@@ -6,6 +6,7 @@ import { FinalCtaSection } from '@/components/manya/final-cta-section';
 import { BlogPreviewSection } from '@/components/manya/blog-preview-section';
 import { TestimonialsSection } from '@/components/manya/testimonials-section';
 import { SuccessCasesSection } from '@/components/manya/success-cases-section';
+import { FaqSection } from '@/components/manya/faq-section';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <TestimonialsSection />
       <StatsSection />
       <BlogPreviewSection />
+      <FaqSection />
       <FinalCtaSection />
     </>
   );
