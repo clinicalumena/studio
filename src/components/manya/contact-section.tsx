@@ -36,13 +36,20 @@ import { Loader2, Mail, MapPin, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, 'Che, necesitamos tu nombre.'),
+  name: z.string().min(2, 'Che, necesitamos tu nombre completo.'),
   email: z.string().email('Ese email no parece válido, probá de nuevo.'),
-  serviceOfInterest: z.string().optional(),
-  question: z.string().min(10, 'Dale, contanos un poco más (al menos 10 caracteres).'),
+  phone: z.string().min(10, 'Por favor, ingresá un teléfono válido.'),
+  company: z.string().optional(),
+  serviceOfInterest: z.string({ required_error: 'Por favor, seleccioná un servicio.' }),
+  location: z.string({ required_error: 'Por favor, seleccioná tu ubicación.' }),
+  projectDetails: z.string().min(10, 'Dale, contanos un poco más (al menos 10 caracteres).'),
+  budget: z.string().optional(),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
+
+const locations = ['Buenos Aires', 'Córdoba', 'Neuquén', 'Rosario', 'Mendoza', 'Otra provincia'];
+const budgets = ['< $500.000', '$500k - $1M', '$1M - $3M', '> $3M', 'Prefiero discutirlo'];
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,8 +61,12 @@ export function ContactSection() {
     defaultValues: {
       name: '',
       email: '',
-      serviceOfInterest: '',
-      question: '',
+      phone: '',
+      company: '',
+      serviceOfInterest: undefined,
+      location: undefined,
+      projectDetails: '',
+      budget: '',
     },
   });
 
@@ -102,7 +113,7 @@ export function ContactSection() {
                     </div>
                     <div className="flex items-center gap-4">
                         <Mail className="h-6 w-6 text-primary flex-shrink-0" strokeWidth={2}/>
-                        <a href="mailto:hola@manyadigital.com" className="transition-colors duration-300 ease-in-out hover:text-primary">hola@manyadigital.com</a>
+                        <a href="mailto:hola@manyadigital.ar" className="transition-colors duration-300 ease-in-out hover:text-primary">hola@manyadigital.ar</a>
                     </div>
                     <div className="flex items-center gap-4">
                         <Phone className="h-6 w-6 text-primary flex-shrink-0" strokeWidth={2}/>
@@ -120,81 +131,132 @@ export function ContactSection() {
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
-                  className="space-y-8"
+                  className="space-y-6"
                 >
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Tu Nombre</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Ej: Juan Pérez" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Tu Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Ej: juan.perez@email.com"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="serviceOfInterest"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Servicio de Interés</FormLabel>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                          value={field.value}
-                        >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Nombre completo*</FormLabel>
                           <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Elegí un servicio (opcional)" />
-                            </SelectTrigger>
+                            <Input placeholder="Ej: Juan Pérez" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email*</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Ej: juan.perez@email.com" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Teléfono / WhatsApp*</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Ej: 11 2345 6789" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="company"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Empresa</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Tu empresa" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="serviceOfInterest"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>¿Qué servicio te interesa?*</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value} value={field.value}>
+                            <FormControl>
+                              <SelectTrigger><SelectValue placeholder="Elegí un servicio" /></SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {services.map((service) => (
+                                <SelectItem key={service.slug} value={service.title}>{service.title}</SelectItem>
+                              ))}
+                              <SelectItem value="No estoy seguro">No estoy seguro</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="location"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>¿Dónde estás ubicado?*</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value} value={field.value}>
+                            <FormControl>
+                              <SelectTrigger><SelectValue placeholder="Seleccioná una ubicación" /></SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {locations.map((loc) => (
+                                <SelectItem key={loc} value={loc}>{loc}</SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <FormField
+                    control={form.control}
+                    name="projectDetails"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Contanos sobre tu proyecto*</FormLabel>
+                        <FormControl>
+                          <Textarea placeholder="Describí tu negocio, tus objetivos y los desafíos que enfrentás." className="min-h-[120px]" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="budget"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Presupuesto estimado (opcional)</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value} value={field.value}>
+                          <FormControl>
+                            <SelectTrigger><SelectValue placeholder="Seleccioná un rango de presupuesto" /></SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            {services.map((service) => (
-                              <SelectItem
-                                key={service.title}
-                                value={service.title}
-                              >
-                                {service.title}
-                              </SelectItem>
+                            {budgets.map((b) => (
+                              <SelectItem key={b} value={b}>{b}</SelectItem>
                             ))}
                           </SelectContent>
                         </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="question"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>¿En qué te podemos ayudar?</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Contanos sobre tu proyecto, tus metas, tus sueños..."
-                            className="min-h-[150px]"
-                            {...field}
-                          />
-                        </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -206,7 +268,7 @@ export function ContactSection() {
                          Enviando...
                         </>
                     ) : (
-                        'Enviar Mensaje'
+                        'Enviar consulta'
                     )}
                   </Button>
                 </form>
@@ -218,3 +280,5 @@ export function ContactSection() {
     </motion.section>
   );
 }
+
+    
