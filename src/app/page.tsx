@@ -7,6 +7,7 @@ import { BlogPreviewSection } from '@/components/manya/blog-preview-section';
 import { TestimonialsSection } from '@/components/manya/testimonials-section';
 import { SuccessCasesSection } from '@/components/manya/success-cases-section';
 import { FaqSection } from '@/components/manya/faq-section';
+import { LocationsSection } from '@/components/manya/locations-section';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <SuccessCasesSection />
       <TestimonialsSection />
       <StatsSection />
+      <LocationsSection />
       <BlogPreviewSection />
       <FaqSection />
       <FinalCtaSection />

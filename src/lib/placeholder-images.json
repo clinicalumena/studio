@@ -107,6 +107,12 @@
       "description": "Imagen para servicio de Automatizaciones",
       "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "automation workflow"
+    },
+    {
+      "id": "argentina-map",
+      "description": "Mapa de Argentina con marcadores",
+      "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/028/628/685/small/artificial-intelligence-illustration-png.png",
+      "imageHint": "argentina map"
     }
   ]
 }
