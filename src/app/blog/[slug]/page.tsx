@@ -39,7 +39,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <article className="bg-background text-foreground">
       {/* Header */}
-      <div className="container mx-auto px-4 pt-12 md:px-6">
+      <div className="container mx-auto px-4 pt-8 md:px-6">
         <div className="flex items-center text-sm text-muted-foreground">
           <Link href="/" className="hover:text-primary">Home</Link>
           <ChevronRight className="h-4 w-4 mx-1" />
@@ -49,12 +49,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
 
-      <header className="container mx-auto px-4 py-12 text-center md:px-6 md:py-16">
+      <header className="container mx-auto px-4 py-8 text-center md:px-6 md:py-12">
         <Badge variant="default" className="mb-4">{post.category}</Badge>
         <h1 className="font-headline text-4xl font-bold md:text-5xl lg:text-6xl max-w-4xl mx-auto">
           {post.title}
         </h1>
-        <div className="mt-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-muted-foreground">
+        <div className="mt-6 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-muted-foreground">
             <div className="flex items-center gap-2">
                 <Avatar className="h-8 w-8">
                     <AvatarImage src={post.author.avatar.src} alt={post.author.name} data-ai-hint={post.author.avatar.hint}/>
@@ -75,7 +75,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       
       {/* Imagen destacada */}
       <div className="container mx-auto px-4 md:px-6">
-        <div className="relative h-64 md:h-96 lg:h-[500px] w-full overflow-hidden rounded-2xl shadow-lg">
+        <div className="relative h-80 md:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-2xl shadow-lg">
             <Image
                 src={post.image.src}
                 alt={post.title}
@@ -87,8 +87,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 mt-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+      <div className="container mx-auto px-4 md:px-6 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Contenido del post */}
             <div className="lg:col-span-8">
                  <div
