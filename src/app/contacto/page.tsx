@@ -21,7 +21,7 @@ export default function ContactoPage() {
         '@type': 'Organization',
         name: 'Manya Digital',
         url: 'https://manyadigital.ar',
-        telephone: '+54-9-11-1234-5678',
+        telephone: '+541158578004',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Ambrosio Olmos 782',

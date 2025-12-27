@@ -106,7 +106,7 @@ export function ContactSection() {
                     </div>
                     <div className="flex items-center gap-4">
                         <Phone className="h-6 w-6 text-primary flex-shrink-0" strokeWidth={2}/>
-                        <a href="tel:+5491112345678" className="transition-colors duration-300 ease-in-out hover:text-primary">+54 9 11 1234-5678</a>
+                        <a href="tel:+541158578004" className="transition-colors duration-300 ease-in-out hover:text-primary">+54 11 5857-8004</a>
                     </div>
                 </CardContent>
              </Card>

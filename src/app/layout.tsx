@@ -40,7 +40,7 @@ export default function RootLayout({
     logo: 'https://manyadigital.ar/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+54-9-11-1234-5678',
+      telephone: '+541158578004',
       contactType: 'customer service',
       areaServed: 'AR',
       availableLanguage: ['es'],
