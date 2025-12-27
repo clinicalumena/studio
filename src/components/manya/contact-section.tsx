@@ -36,20 +36,20 @@ import { Loader2, Mail, MapPin, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, 'Che, necesitamos tu nombre completo.'),
-  email: z.string().email('Ese email no parece válido, probá de nuevo.'),
-  phone: z.string().min(10, 'Por favor, ingresá un teléfono válido.'),
+  name: z.string().min(2, { message: 'Por favor, ingresá tu nombre completo.' }),
+  email: z.string().email({ message: 'El formato del email no parece válido.' }),
+  phone: z.string().min(10, { message: 'Por favor, ingresá un número de teléfono válido.' }),
   company: z.string().optional(),
-  serviceOfInterest: z.string({ required_error: 'Por favor, seleccioná un servicio.' }),
+  serviceOfInterest: z.string({ required_error: 'Por favor, seleccioná un servicio de interés.' }),
   location: z.string({ required_error: 'Por favor, seleccioná tu ubicación.' }),
-  projectDetails: z.string().min(10, 'Dale, contanos un poco más (al menos 10 caracteres).'),
+  projectDetails: z.string().min(30, { message: 'Contanos un poco más, al menos 30 caracteres.' }),
   budget: z.string().optional(),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 const locations = ['Buenos Aires', 'Córdoba', 'Neuquén', 'Rosario', 'Mendoza', 'Otra provincia'];
-const budgets = ['< $500.000', '$500k - $1M', '$1M - $3M', '> $3M', 'Prefiero discutirlo'];
+const budgets = ['< $500.000', '$500.000 - $1.000.000', '$1.000.000 - $3.000.000', '> $3.000.000', 'Prefiero discutirlo'];
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -280,5 +280,3 @@ export function ContactSection() {
     </motion.section>
   );
 }
-
-    
