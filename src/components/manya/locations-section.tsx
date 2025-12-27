@@ -1,3 +1,4 @@
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -37,16 +38,16 @@ export function LocationsSection() {
                                 Con presencia en los puntos neurálgicos del país, combinamos el conocimiento local con una visión global para llevar tu marca al siguiente nivel.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {locations.map((location) => (
                                 <Link href={location.href} key={location.name} className="group">
-                                    <Card className="transition-all duration-300 ease-in-out group-hover:bg-muted/60 group-hover:shadow-md group-hover:-translate-y-1 border">
-                                        <CardContent className="p-4 flex items-center justify-between">
-                                            <div className="flex items-center gap-3">
-                                                <MapPin className="h-5 w-5 text-primary" />
-                                                <h3 className="font-semibold">{location.name}</h3>
+                                    <Card className="h-full transition-all duration-300 ease-in-out group-hover:bg-muted/60 group-hover:shadow-md group-hover:-translate-y-1 border">
+                                        <CardContent className="p-6 flex items-center justify-between">
+                                            <div className="flex items-center gap-4">
+                                                <MapPin className="h-6 w-6 text-primary flex-shrink-0" />
+                                                <h3 className="font-semibold text-lg">{location.name}</h3>
                                             </div>
-                                            <MoveRight className="h-5 w-5 text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                                            <MoveRight className="h-5 w-5 text-muted-foreground opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1" />
                                         </CardContent>
                                     </Card>
                                 </Link>
